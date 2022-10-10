@@ -2,31 +2,31 @@ import { sequelize } from "../db/db.js";
 import {  DataTypes } from "sequelize";
 
 
-export const Mascotas = sequelize.define('mascota',{
-    idmascota:{
+export const Pets = sequelize.define('pets',{
+    idpet:{
         type: DataTypes.INTEGER,
         primaryKey: true,
         autoIncrement: true
     },
-    nombre:{
+    name:{
         type: DataTypes.STRING
     },
-    especie:{
+    ownername:{
         type: DataTypes.STRING
     },
-    raza:{
+    kind:{
         type: DataTypes.STRING
     },
-    sexo:{
+    race:{
         type: DataTypes.STRING
     },
-    peso:{
+    size:{
         type: DataTypes.STRING
     },
-    utilizacion:{
+    utilization:{
         type: DataTypes.STRING
     },
-    altura:{
+    weight:{
         type: DataTypes.STRING
     }
 },{

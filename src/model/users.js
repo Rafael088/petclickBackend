@@ -1,24 +1,24 @@
 import { sequelize } from "../db/db.js";
 import {  DataTypes } from "sequelize";
-import { Mascotas } from "./mascotas.js";
+import { Pets } from "./pets.js";
 //Modelos
-export const Usuarios = sequelize.define('usuarios', {
-    idusuarios:{
+export const Users = sequelize.define('users', {
+    iduser:{
         type: DataTypes.INTEGER,
         primaryKey: true,
         autoIncrement: true
     },
-    rolusuarios:{
+    userrol:{
         type: DataTypes.STRING,
         defaultValue: "users"
     },
-    nombreusuario:{
+    username:{
         type: DataTypes.STRING
     },
-    correo:{
+    mail:{
         type: DataTypes.STRING
     },
-    idsuscripcion:{
+    idsubscription:{
         type: DataTypes.INTEGER,
         defaultValue: 0
     },
@@ -29,11 +29,11 @@ export const Usuarios = sequelize.define('usuarios', {
     timestamps: false
 });
 
-Usuarios.hasMany(Mascotas, {
-foreingKey: 'idUsuario',
-soucerKey: 'idusuarios'
+Users.hasMany(Pets, {
+foreingKey: 'iduser',
+soucerKey: 'iduser'
 })
 
-Mascotas.belongsTo(Usuarios, {
-targetId: 'idusuarios'
+Pets.belongsTo(Users, {
+targetId: 'iduser'
 })
