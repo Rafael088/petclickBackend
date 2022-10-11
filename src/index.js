@@ -6,12 +6,10 @@ async function main() {
     try {
         await sequelize.sync()
         app.get('/', (req, res) => res.send('Hello World!'))
-        app.listen(port, () => console.log(
-            `Example app listening on port ${port}!`
-        ))
+        app.listen(process.env.PORT || port)
     } catch (error) {
         console.error('Unable to connect to the database:', error);
-      }
+    }
     
 }
 main();
