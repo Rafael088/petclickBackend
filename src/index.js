@@ -1,10 +1,10 @@
 import app from './app.js';
-//import { sequelize } from "./db/db.js";
+import { sequelize } from "./db/db.js";
 const port = 3000
 
 async function main() {
     try {
-        //await sequelize.sync()
+        await sequelize.sync()
         app.get('/', (req, res) => res.send('Hello World!'))
         app.listen(process.env.PORT || port)
     } catch (error) {

@@ -1,4 +1,4 @@
-import {Pets} from '../model/Pets.js';
+import {Pets} from '../model/pets.js';
 
 export async function gPets(req, res) {
     try {
