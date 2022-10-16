@@ -3,7 +3,7 @@ import { sequelize } from "./db/db.js";
 import cors from 'cors';
 
 const port = 3000
-const whitelist = ['https://localhost:3001', 'https://localhost:3001'];
+const whitelist = ['https://localhost:3000', 'https://localhost:3001'];
 
 app.use(cors({
     origin: whitelist
