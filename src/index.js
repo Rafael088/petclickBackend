@@ -1,7 +1,13 @@
 import app from './app.js';
 import { sequelize } from "./db/db.js";
-const port = 3000
+import cors from 'cors';
 
+const port = 3000
+const whitelist = ['https://localhost:3001', 'https://localhost:3001'];
+
+app.use(cors({
+    origin: whitelist
+}));
 async function main() {
     try {
         await sequelize.sync()
