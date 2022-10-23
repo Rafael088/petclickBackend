@@ -10,7 +10,7 @@ export async function gPets(req, res) {
     
 }
 export async function cPet(req, res) {
-    const {idpet, name, ownername, kind, race, size, utilization, weight, iduser} = req.body
+    const {idpet, name, ownername, kind, race, size, utilization, weight, iduser, gende, date} = req.body
     try {
         await Pets.create({
             idpet,
@@ -21,7 +21,9 @@ export async function cPet(req, res) {
             size,
             utilization,
             weight,
-            iduser
+            iduser,
+            gende,
+            date
         });
         res.sendStatus(204);
     } catch (error) {
@@ -80,3 +82,4 @@ export async function gOnePet(req, res) {
         return res.status(500).json({message: error.message})
     }
 }
+

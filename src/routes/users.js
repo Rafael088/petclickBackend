@@ -7,6 +7,6 @@ router.get("/users:iduser", gOneUser);
 router.post("/users", cUser);
 router.delete("/users:iduser", dUser);
 router.put("/users:iduser", uUser);
-router.get("/users:iduser/pets", gMUser);
+router.get("/users/pets:iduser", gMUser);
 
 export default router;

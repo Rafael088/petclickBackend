@@ -4,9 +4,8 @@ import { Pets } from "./pets.js";
 //Modelos
 export const Users = sequelize.define('users', {
     iduser:{
-        type: DataTypes.INTEGER,
+        type: DataTypes.STRING,
         primaryKey: true,
-        autoIncrement: true
     },
     userrol:{
         type: DataTypes.STRING,
@@ -24,16 +23,14 @@ export const Users = sequelize.define('users', {
     },
     password:{
         type: DataTypes.STRING
-    }
+    },
+    number:{
+        type: DataTypes.STRING
+    },
+    city:{
+        type: DataTypes.STRING
+    },
+    
 },{
     timestamps: false
 });
-
-Users.hasMany(Pets, {
-foreingKey: 'iduser',
-soucerKey: 'iduser'
-})
-
-Pets.belongsTo(Users, {
-targetId: 'iduser'
-})

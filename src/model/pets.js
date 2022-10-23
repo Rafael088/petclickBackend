@@ -28,6 +28,15 @@ export const Pets = sequelize.define('pets',{
     },
     weight:{
         type: DataTypes.STRING
+    },
+    iduser:{
+        type: DataTypes.STRING
+    },
+    gende:{
+        type: DataTypes.STRING
+    },
+    date:{
+        type: DataTypes.STRING
     }
 },{
     timestamps: false

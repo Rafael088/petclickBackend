@@ -12,13 +12,16 @@ export async function gUsers(req, res) {
     
 }
 export async function cUser(req, res) {
-    const {userrol, username, mail, password} = req.body
+    const {iduser, userrol, username, mail, password, number, city} = req.body
     try {
         await Users.create({
+            iduser,
             userrol,
             username,
             mail,
-            password
+            password,
+            number,
+            city,
         });
         res.sendStatus(204);
     } catch (error) {
