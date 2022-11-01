@@ -8,8 +8,17 @@ export const Appointments = sequelize.define('appointments',{
         primaryKey: true,
         autoIncrement: true
     },
+    idveterinaryclinic:{
+        type: DataTypes.INTEGER,
+    },
     appointmentdate:{
         type: DataTypes.STRING
+    },
+    iddoctor:{
+        type: DataTypes.INTEGER,
+    },
+    iduser:{
+        type: DataTypes.INTEGER,
     }
 },{
     timestamps: false
